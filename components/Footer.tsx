@@ -41,7 +41,7 @@ const SocialButton = ({
   )
 }
 
-export default function SmallWithSocial() {
+export default function Footer() {
   return (
     <Box
       borderTop={1}
@@ -49,7 +49,7 @@ export default function SmallWithSocial() {
       borderColor={useColorModeValue('gray.200', 'gray.900')}>
       <Container
         as={Stack}
-        maxW={'6xl'}
+        maxW={'7xl'}
         py={4}
         direction={{ base: 'column', md: 'row' }}
         spacing={4}
