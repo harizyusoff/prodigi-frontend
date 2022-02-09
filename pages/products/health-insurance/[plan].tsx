@@ -9,16 +9,20 @@ import {
   Icon,
   Button
 } from '@chakra-ui/react'
+import Head from 'next/head'
 import Link from 'next/link'
 import { FaHandHoldingUsd, FaHistory, FaViruses, FaCreditCard, FaCarCrash, FaReceipt, FaBed, FaHospital, FaInfinity } from 'react-icons/fa'
 
 export default function HealthInsurancePlanDetails() {
   const router = useRouter()
   const { plan } = router.query
-  const title = String(plan).split("-").join(" ")
+  const title = String(plan).split("-").map((e) => e.charAt(0).toUpperCase() + e.slice(1)).join(" ")
 
   return (
     <Box>
+      <Head>
+        <title>{title} Plan Details</title>
+      </Head>
       <Flex 
         h={'400px'}
         direction={'column'}
@@ -49,7 +53,6 @@ export default function HealthInsurancePlanDetails() {
             borderStyle={'solid'}
             borderColor={'gray.200'}
             borderRadius={8}
-            cursor={'pointer'}
           >
             <Icon as={FaViruses} w={20} h={20} mb={10} />
             <Text fontSize={18} fontWeight={'semibold'} align={'center'} mb={5}>Covid-19 Cover</Text>
@@ -65,7 +68,6 @@ export default function HealthInsurancePlanDetails() {
             borderStyle={'solid'}
             borderColor={'gray.200'}
             borderRadius={8}
-            cursor={'pointer'}
           >
             <Icon as={FaHistory} w={20} h={20} mb={10} />
             <Text fontSize={18} fontWeight={'semibold'} align={'center'} mb={5}>Instant Approval</Text>
@@ -81,7 +83,6 @@ export default function HealthInsurancePlanDetails() {
             borderStyle={'solid'}
             borderColor={'gray.200'}
             borderRadius={8}
-            cursor={'pointer'}
           >
             <Icon as={FaHandHoldingUsd} w={20} h={20} mb={10} />
             <Text fontSize={18} fontWeight={'semibold'} align={'center'} mb={5}>From RM1.74 Per Day</Text>
@@ -97,7 +98,6 @@ export default function HealthInsurancePlanDetails() {
             borderStyle={'solid'}
             borderColor={'gray.200'}
             borderRadius={8}
-            cursor={'pointer'}
           >
             <Icon as={FaCreditCard} w={20} h={20} mb={10} />
             <Text fontSize={18} fontWeight={'semibold'} align={'center'} mb={5}>Cashless Hospital Admissions</Text>
@@ -113,7 +113,6 @@ export default function HealthInsurancePlanDetails() {
             borderStyle={'solid'}
             borderColor={'gray.200'}
             borderRadius={8}
-            cursor={'pointer'}
           >
             <Icon as={FaCarCrash} w={20} h={20} mb={10} />
             <Text fontSize={18} fontWeight={'semibold'} align={'center'} mb={5}>Accidents & Emergencies</Text>
@@ -129,7 +128,6 @@ export default function HealthInsurancePlanDetails() {
             borderStyle={'solid'}
             borderColor={'gray.200'}
             borderRadius={8}
-            cursor={'pointer'}
           >
             <Icon as={FaReceipt} w={20} h={20} mb={10} />
             <Text fontSize={18} fontWeight={'semibold'} align={'center'} mb={5}>Outpatient Benefits</Text>
@@ -145,7 +143,6 @@ export default function HealthInsurancePlanDetails() {
             borderStyle={'solid'}
             borderColor={'gray.200'}
             borderRadius={8}
-            cursor={'pointer'}
           >
             <Icon as={FaBed} w={20} h={20} mb={10} />
             <Text fontSize={18} fontWeight={'semibold'} align={'center'} mb={5}>he Best Hospitals At Affordable Premiums</Text>
@@ -161,7 +158,6 @@ export default function HealthInsurancePlanDetails() {
             borderStyle={'solid'}
             borderColor={'gray.200'}
             borderRadius={8}
-            cursor={'pointer'}
           >
             <Icon as={FaHospital} w={20} h={20} mb={10} />
             <Text fontSize={18} fontWeight={'semibold'} align={'center'} mb={5}>Premium Room Choices</Text>
@@ -177,7 +173,6 @@ export default function HealthInsurancePlanDetails() {
             borderStyle={'solid'}
             borderColor={'gray.200'}
             borderRadius={8}
-            cursor={'pointer'}
           >
             <Icon as={FaInfinity} w={20} h={20} mb={10} />
             <Text fontSize={18} fontWeight={'semibold'} align={'center'} mb={5}>Unlimited Lifetime Cover</Text>

@@ -8,8 +8,8 @@ export default function Home() {
     <Box>
       <Container maxW={'7xl'}>
       <Head>
-        <title>Prodiginow Insurance</title>
-        <meta name="description" content="Insurance for your need" />
+        <title>Prodiginow</title>
+        <meta name="description" content="Insurance for your need, number one insurance service in the world" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
         <Flex

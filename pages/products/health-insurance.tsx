@@ -11,12 +11,16 @@ import {
   Icon,
   Button
 } from '@chakra-ui/react'
+import Head from 'next/head'
 import Link from 'next/link'
 import { FaCheckCircle, FaStethoscope, FaHeartbeat, FaViruses, FaVial, FaProcedures, FaClinicMedical, FaSyringe } from 'react-icons/fa'
 
 export default function HealthInsurance() {
   return (
     <Box>
+      <Head>
+        <title>Health Insurance</title>
+      </Head>
       <Flex 
         border={'1px solid'}
         h={'400px'}
@@ -127,7 +131,9 @@ export default function HealthInsurance() {
                   </List>
                 </Flex>
               </Link>
-              <Button bgColor={'proY.10'} _hover={{ bgColor: 'proY.20'}} color={'black'} borderRadius={'full'} px={10} py={8}>Apply Online</Button>
+              <Link href={'/products/health-insurance/[plan]/submission'} as={`/products/health-insurance/medical-pass/submission`}>
+                <Button bgColor={'proY.10'} _hover={{ bgColor: 'proY.20'}} color={'black'} borderRadius={'full'} px={10} py={8}>Apply Online</Button>
+              </Link>
             </Flex>
             {/* Cancer Care Pass */}
             <Flex
@@ -169,7 +175,9 @@ export default function HealthInsurance() {
                   </List>
                 </Flex>
               </Link>
-              <Button bgColor={'proY.10'} _hover={{ bgColor: 'proY.20'}} color={'black'} borderRadius={'full'} px={10} py={8}>Apply Online</Button>
+              <Link href={'/products/health-insurance/[plan]/submission'} as={`/products/health-insurance/cancer-care-pass/submission`}>
+                <Button bgColor={'proY.10'} _hover={{ bgColor: 'proY.20'}} color={'black'} borderRadius={'full'} px={10} py={8}>Apply Online</Button>
+              </Link>
             </Flex>
             {/* Medical Plus */}
             <Flex
@@ -211,7 +219,9 @@ export default function HealthInsurance() {
                   </List>
                 </Flex>
               </Link>
-              <Button bgColor={'proY.10'} _hover={{ bgColor: 'proY.20'}} color={'black'} borderRadius={'full'} px={10} py={8}>Apply Online</Button>
+              <Link href={'/products/health-insurance/[plan]/submission'} as={`/products/health-insurance/medical-plus/submission`}>
+                <Button bgColor={'proY.10'} _hover={{ bgColor: 'proY.20'}} color={'black'} borderRadius={'full'} px={10} py={8}>Apply Online</Button>
+              </Link>
             </Flex>
             {/* Invest Linked Medical Plus */}
             <Flex
@@ -253,7 +263,9 @@ export default function HealthInsurance() {
                   </List>
                 </Flex>
               </Link>
-              <Button bgColor={'proY.10'} _hover={{ bgColor: 'proY.20'}} color={'black'} borderRadius={'full'} px={10} py={8}>Apply Online</Button>
+              <Link href={'/products/health-insurance/[plan]/submission'} as={`/products/health-insurance/invest-linked-medical-plus/submission`}>
+                <Button bgColor={'proY.10'} _hover={{ bgColor: 'proY.20'}} color={'black'} borderRadius={'full'} px={10} py={8}>Apply Online</Button>
+              </Link>
             </Flex>
             {/* Invest Linked Medical Gold */}
             <Flex
@@ -346,7 +358,9 @@ export default function HealthInsurance() {
                   </List>
                 </Flex>
               </Link>
-              <Button bgColor={'proY.10'} _hover={{ bgColor: 'proY.20'}} color={'black'} borderRadius={'full'} px={10} py={8}>Apply Online</Button>
+              <Link href={'/products/health-insurance/[plan]/submission'} as={`/products/health-insurance/invest-linked-medical-gold/submission`}>
+                <Button bgColor={'proY.10'} _hover={{ bgColor: 'proY.20'}} color={'black'} borderRadius={'full'} px={10} py={8}>Apply Online</Button>
+              </Link>
             </Flex>
             {/* Invest Linked Medical Platinum */}
             <Flex
@@ -388,7 +402,9 @@ export default function HealthInsurance() {
                   </List>
                 </Flex>
               </Link>
-              <Button bgColor={'proY.10'} _hover={{ bgColor: 'proY.20'}} color={'black'} borderRadius={'full'} px={10} py={8}>Apply Online</Button>
+              <Link href={'/products/health-insurance/[plan]/submission'} as={`/products/health-insurance/invest-linked-medical-platinum/submission`}>
+                <Button bgColor={'proY.10'} _hover={{ bgColor: 'proY.20'}} color={'black'} borderRadius={'full'} px={10} py={8}>Apply Online</Button>
+              </Link>
             </Flex>
             {/* Invest Linked Medical Covid-19 */}
             <Flex
@@ -430,7 +446,9 @@ export default function HealthInsurance() {
                   </List>
                 </Flex>
               </Link>
-              <Button bgColor={'proY.10'} _hover={{ bgColor: 'proY.20'}} color={'black'} borderRadius={'full'} px={10} py={8}>Apply Online</Button>
+              <Link href={'/products/health-insurance/[plan]/submission'} as={`/products/health-insurance/invest-linked-medical-covid/submission`}>
+                <Button bgColor={'proY.10'} _hover={{ bgColor: 'proY.20'}} color={'black'} borderRadius={'full'} px={10} py={8}>Apply Online</Button>
+              </Link>
             </Flex>
           </SimpleGrid>
         </Box>
