@@ -35,9 +35,6 @@ export default function Navbar() {
           minH={'60px'}
           py={{ base: 2 }}
           px={{ base: 4 }}
-          borderBottom={1}
-          borderStyle={'solid'}
-          borderColor={useColorModeValue('gray.200', 'gray.900')}
           align={'center'}>
           <Flex
             flex={{ base: 1, md: 'auto' }}
@@ -54,7 +51,8 @@ export default function Navbar() {
           </Flex>
           <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
             <Text
-              textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
+              as={'a'}
+              href={'/'}
               fontFamily={'heading'}
               fontWeight={'bold'}
               color={useColorModeValue('gray.800', 'white')}>
@@ -87,6 +85,8 @@ export default function Navbar() {
               color={'white'}
               bg={'proPr.30'}
               href={'#'}
+              borderRadius={'full'}
+              px={6}
               _hover={{
                 bg: 'proPr.20',
               }}>
@@ -262,7 +262,7 @@ const NAV_ITEMS: Array<NavItem> = [
       {
         label: 'Health Insurance',
         subLabel: 'Unbelievable health insurance solution covers for medical expenses in the future',
-        href: '#',
+        href: '/products/health-insurance',
       }
     ],
   }

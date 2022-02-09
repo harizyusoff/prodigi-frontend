@@ -43,10 +43,7 @@ const SocialButton = ({
 
 export default function Footer() {
   return (
-    <Box
-      borderTop={1}
-      borderStyle={'solid'}
-      borderColor={useColorModeValue('gray.200', 'gray.900')}>
+    <Box>
       <Container
         as={Stack}
         maxW={'7xl'}
@@ -55,7 +52,7 @@ export default function Footer() {
         spacing={4}
         justify={{ base: 'center', md: 'space-between' }}
         align={{ base: 'center', md: 'center' }}>
-        <Text>© 2022 Prodiginow. All rights reserved</Text>
+        <Text fontSize={14} color={'#4A5528'}>© 2022 Prodiginow. All rights reserved</Text>
         <Stack direction={'row'} spacing={6}>
           <SocialButton label={'Twitter'} href={'#'}>
             <FaTwitter />
