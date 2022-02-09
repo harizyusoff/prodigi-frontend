@@ -9,9 +9,10 @@ import {
   Icon,
   Button
 } from '@chakra-ui/react'
+import Link from 'next/link'
 import { FaHandHoldingUsd, FaHistory, FaViruses, FaCreditCard, FaCarCrash, FaReceipt, FaBed, FaHospital, FaInfinity } from 'react-icons/fa'
 
-export default function HealthInsurance() {
+export default function HealthInsurancePlanDetails() {
   const router = useRouter()
   const { plan } = router.query
   const title = String(plan).split("-").join(" ")
@@ -193,7 +194,9 @@ export default function HealthInsurance() {
             Cover your medical needs with Prodigi's {title}
           </Text>
           <Box w={'full'} textAlign={'center'}>
-            <Button bgColor={'proY.10'} _hover={{ bgColor: 'proY.20'}} color={'black'} borderRadius={'full'} px={10} py={8}>Apply Online</Button>
+            <Link href={'/products/health-insurance/[plan]/submission'} as={`/products/health-insurance/${plan}/submission`}>
+              <Button bgColor={'proY.10'} _hover={{ bgColor: 'proY.20'}} color={'black'} borderRadius={'full'} px={10} py={8}>Apply Online</Button>
+            </Link>
           </Box>
         </Container>
       </Flex>
