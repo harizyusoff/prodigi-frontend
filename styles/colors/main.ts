@@ -1,6 +1,12 @@
-// proGy - Grey
-// proG  - Green
-// proPr - Purple
+
+/** Color naming
+ ** 1) proGy - Grey
+ ** 2) proG  - Green
+ ** 3) proPr - Purple
+ ** 4) proY  - Yellow
+ ** Color description
+ ** - Ordering of the numbers below is based on the brightest to the darkest
+**/
 export const main = {
   proGy: {
     10: '#07080F',
