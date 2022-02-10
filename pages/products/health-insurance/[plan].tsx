@@ -11,12 +11,11 @@ import {
 } from '@chakra-ui/react'
 import Head from 'next/head'
 import Link from 'next/link'
-import { benefitsData } from '../../../data/main'
+import { benefitsData } from '../../../mock-data/main'
+import { getDocumentMeta } from '../../../utils/main'
 
 export default function HealthInsurancePlanDetails() {
-  const router = useRouter()
-  const { plan } = router.query
-  const title = String(plan).split("-").map((e) => e.charAt(0).toUpperCase() + e.slice(1)).join(" ")
+  const { title, plan } = getDocumentMeta()
 
   return (
     <Box>
