@@ -24,7 +24,6 @@ export default function HealthInsurance() {
         <title>Health Insurance</title>
       </Head>
       <Flex 
-        border={'1px solid'}
         h={'400px'}
         direction={'column'}
         align={'center'}
