@@ -15,7 +15,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { FaCheckCircle } from 'react-icons/fa'
 import GridRibbon from '../../components/GridRibbon'
-import { insurancePlansData } from '../../data/main'
+import { insurancePlansData } from '../../mock-data/main'
 
 export default function HealthInsurance() {
   return (
@@ -56,9 +56,9 @@ export default function HealthInsurance() {
               borderRadius={8}
               cursor={'pointer'}
             >
-              {/* Ribbon: Display ribbon when remark about insurance existed */}
+              {/* Ribbon: Display ribbon when remark about insurance plan existed */}
               {data.remark ? (
-                <GridRibbon ribbonTitle={data.remark} />
+                <GridRibbon label={data.remark} />
               ) : (
                 <></>
               )}
