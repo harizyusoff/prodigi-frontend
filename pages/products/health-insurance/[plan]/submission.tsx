@@ -3,10 +3,7 @@ import {
   Box,
   Text,
   Container,
-  SimpleGrid,
   Flex,
-  Heading,
-  Icon,
   Button,
   List,
   ListItem,
@@ -20,15 +17,19 @@ import {
   TabList,
   Tab
 } from '@chakra-ui/react'
+import Head from 'next/head'
 import { FaCheckCircle } from 'react-icons/fa'
 
 export default function InsuranceAppForm() {
   const router = useRouter()
   const { plan } = router.query
-  const title = String(plan).split("-").join(" ")
+  const title = String(plan).split("-").map((e) => e.charAt(0).toUpperCase() + e.slice(1)).join(" ")
 
   return (
     <Box>
+      <Head>
+        <title>{title} Form</title>
+      </Head>
       <Container
         maxW={'7xl'}
         py={24}>
@@ -39,7 +40,6 @@ export default function InsuranceAppForm() {
               pr={20}>
               <Text fontSize={24} fontWeight={'bold'} textTransform={'capitalize'} mb={2}>{title} Form</Text>
               <Text>
-                (Get covered for Covid-19 hospitalisation and vaccine side-effects.)
                 Get RM88 for the first 222 customers when you subscribe <Text as={'span'} textTransform={'capitalize'}>{title}</Text> at annual payment!
                 Enjoy instant medical coverage online - Full benefits
               </Text>

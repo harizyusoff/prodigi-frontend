@@ -12,7 +12,6 @@ import {
   PopoverTrigger,
   PopoverContent,
   useColorModeValue,
-  useBreakpointValue,
   useDisclosure,
   Container,
 } from '@chakra-ui/react'
@@ -22,6 +21,7 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from '@chakra-ui/icons'
+import NextLink from 'next/link'
 
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure()
@@ -35,9 +35,6 @@ export default function Navbar() {
           minH={'60px'}
           py={{ base: 2 }}
           px={{ base: 4 }}
-          borderBottom={1}
-          borderStyle={'solid'}
-          borderColor={useColorModeValue('gray.200', 'gray.900')}
           align={'center'}>
           <Flex
             flex={{ base: 1, md: 'auto' }}
@@ -53,13 +50,15 @@ export default function Navbar() {
             />
           </Flex>
           <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-            <Text
-              textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
-              fontFamily={'heading'}
-              fontWeight={'bold'}
-              color={useColorModeValue('gray.800', 'white')}>
-              PRODIGINOW
-            </Text>
+            <NextLink href={'/'}>
+              <Text
+                cursor={'pointer'}
+                fontFamily={'heading'}
+                fontWeight={'bold'}
+                color={useColorModeValue('gray.800', 'white')}>
+                PRODIGINOW
+              </Text>
+            </NextLink>
 
             <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
               <DesktopNav />
@@ -72,11 +71,9 @@ export default function Navbar() {
             direction={'row'}
             spacing={6}>
             <Button
-              as={'a'}
               fontSize={'sm'}
               fontWeight={400}
-              variant={'link'}
-              href={'#'}
+              variant={''}
               _hover={{textDecoration: 'none'}}>
               Sign In
             </Button>
@@ -86,7 +83,8 @@ export default function Navbar() {
               fontWeight={600}
               color={'white'}
               bg={'proPr.30'}
-              href={'#'}
+              borderRadius={'full'}
+              px={6}
               _hover={{
                 bg: 'proPr.20',
               }}>
@@ -152,36 +150,38 @@ const DesktopNav = () => {
 
 const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
   return (
-    <Link
-      href={href}
-      role={'group'}
-      display={'block'}
-      p={4}
-      rounded={'md'}
-      _hover={{ bg: useColorModeValue('proPr.10', 'gray.900') }}>
-      <Stack direction={'row'} align={'center'}>
-        <Box>
-          <Text
+    <NextLink href={href}>
+      <Box
+        cursor={'pointer'}
+        role={'group'}
+        display={'block'}
+        p={4}
+        rounded={'md'}
+        _hover={{ bg: useColorModeValue('proPr.10', 'gray.900') }}>
+        <Stack direction={'row'} align={'center'}>
+          <Box>
+            <Text
+              transition={'all .3s ease'}
+              _groupHover={{ color: 'proPr.20' }}
+              fontWeight={500}
+              mb={3}>
+              {label}
+            </Text>
+            <Text fontSize={'sm'}>{subLabel}</Text>
+          </Box>
+          <Flex
             transition={'all .3s ease'}
-            _groupHover={{ color: 'proPr.20' }}
-            fontWeight={500}
-            mb={3}>
-            {label}
-          </Text>
-          <Text fontSize={'sm'}>{subLabel}</Text>
-        </Box>
-        <Flex
-          transition={'all .3s ease'}
-          transform={'translateX(-10px)'}
-          opacity={0}
-          _groupHover={{ opacity: '100%', transform: 'translateX(0)' }}
-          justify={'flex-end'}
-          align={'center'}
-          flex={1}>
-          <Icon color={'proPr.20'} w={5} h={5} as={ChevronRightIcon} />
-        </Flex>
-      </Stack>
-    </Link>
+            transform={'translateX(-10px)'}
+            opacity={0}
+            _groupHover={{ opacity: '100%', transform: 'translateX(0)' }}
+            justify={'flex-end'}
+            align={'center'}
+            flex={1}>
+            <Icon color={'proPr.20'} w={5} h={5} as={ChevronRightIcon} />
+          </Flex>
+        </Stack>
+      </Box>
+    </NextLink>
   )
 }
 
@@ -262,7 +262,7 @@ const NAV_ITEMS: Array<NavItem> = [
       {
         label: 'Health Insurance',
         subLabel: 'Unbelievable health insurance solution covers for medical expenses in the future',
-        href: '#',
+        href: '/products/health-insurance',
       }
     ],
   }
