@@ -22,7 +22,31 @@ import {
   ChevronRightIcon,
 } from '@chakra-ui/icons'
 import NextLink from 'next/link'
+interface NavItem {
+  label: string
+  subLabel?: string
+  children?: Array<NavItem>
+  href?: string
+}
 
+const NAV_ITEMS: Array<NavItem> = [
+  {
+    label: 'Products',
+    children: [
+      {
+        label: 'Health Insurance',
+        subLabel: 'Unbelievable health insurance solution covers for medical expenses in the future',
+        href: '/products/health-insurance',
+      }
+    ],
+  }
+]
+
+/** Main navigation bar used across all the pages.
+ ** Items inside navigation bar will automatically change
+ ** based on screen breakpoint. For desktop <DesktopNav />
+ ** and for mobile <MobileNav />
+**/
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure()
 
@@ -101,6 +125,7 @@ export default function Navbar() {
   )
 }
 
+// Main navigation bar for desktop screen size
 const DesktopNav = () => {
   const linkColor = useColorModeValue('gray.600', 'gray.200')
   const linkHoverColor = useColorModeValue('gray.800', 'white')
@@ -148,6 +173,7 @@ const DesktopNav = () => {
   )
 }
 
+// Item (i.e links) inside main navigation for desktop screen size
 const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
   return (
     <NextLink href={href}>
@@ -185,9 +211,11 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
   )
 }
 
+// Main navigation bar for mobile screen size
 const MobileNav = () => {
   return (
     <Stack
+      border={'1px solid blue'}
       bg={useColorModeValue('white', 'gray.800')}
       p={4}
       display={{ md: 'none' }}>
@@ -198,11 +226,12 @@ const MobileNav = () => {
   )
 }
 
+// Item (i.e links) inside main navigation for mobile screen size
 const MobileNavItem = ({ label, children, href }: NavItem) => {
   const { isOpen, onToggle } = useDisclosure()
 
   return (
-    <Stack spacing={4} onClick={children && onToggle}>
+    <Stack spacing={4} onClick={children && onToggle} border={'1px solid red'}>
       <Flex
         py={2}
         as={Link}
@@ -247,23 +276,3 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
     </Stack>
   )
 }
-
-interface NavItem {
-  label: string
-  subLabel?: string
-  children?: Array<NavItem>
-  href?: string
-}
-
-const NAV_ITEMS: Array<NavItem> = [
-  {
-    label: 'Products',
-    children: [
-      {
-        label: 'Health Insurance',
-        subLabel: 'Unbelievable health insurance solution covers for medical expenses in the future',
-        href: '/products/health-insurance',
-      }
-    ],
-  }
-]

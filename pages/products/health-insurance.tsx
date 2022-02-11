@@ -15,7 +15,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { FaCheckCircle } from 'react-icons/fa'
 import GridRibbon from '../../components/GridRibbon'
-import { insurancePlansData } from '../../data/main'
+import { insurancePlansData } from '../../mock-data/main'
 
 export default function HealthInsurance() {
   return (
@@ -23,12 +23,12 @@ export default function HealthInsurance() {
       <Head>
         <title>Health Insurance</title>
       </Head>
-      <Flex 
+      <Flex
+        className={'page-banner'}
         h={'400px'}
         direction={'column'}
         align={'center'}
-        justify={'center'}
-        bgGradient='linear(to-r, #5C449A, #1879BD)'>
+        justify={'center'}>
         <Heading as={'h1'} color={'white'} fontSize={40} fontWeight={'bold'} mb={3}>
           Health Insurance
         </Heading>
@@ -56,9 +56,9 @@ export default function HealthInsurance() {
               borderRadius={8}
               cursor={'pointer'}
             >
-              {/* Ribbon: Display ribbon when remark about insurance existed */}
+              {/* Ribbon: Display ribbon when remark about insurance plan existed */}
               {data.remark ? (
-                <GridRibbon ribbonTitle={data.remark} />
+                <GridRibbon label={data.remark} />
               ) : (
                 <></>
               )}

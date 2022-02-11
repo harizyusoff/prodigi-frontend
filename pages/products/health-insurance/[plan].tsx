@@ -11,12 +11,11 @@ import {
 } from '@chakra-ui/react'
 import Head from 'next/head'
 import Link from 'next/link'
-import { benefitsData } from '../../../data/main'
+import { benefitsData } from '../../../mock-data/main'
+import { getDocumentMeta } from '../../../utils/main'
 
 export default function HealthInsurancePlanDetails() {
-  const router = useRouter()
-  const { plan } = router.query
-  const title = String(plan).split("-").map((e) => e.charAt(0).toUpperCase() + e.slice(1)).join(" ")
+  const { title, plan } = getDocumentMeta()
 
   return (
     <Box>
@@ -24,11 +23,11 @@ export default function HealthInsurancePlanDetails() {
         <title>{title} Plan Details</title>
       </Head>
       <Flex 
+        className={'page-banner'}
         h={'400px'}
         direction={'column'}
         align={'center'}
-        justify={'center'}
-        bgGradient='linear(to-r, #5C449A, #1879BD)'>
+        justify={'center'}>
         <Heading as={'h1'} color={'white'} fontSize={40} fontWeight={'bold'} mb={3} textTransform={'capitalize'}>
           {title}
         </Heading>

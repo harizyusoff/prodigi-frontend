@@ -14,3 +14,7 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.page-banner {
+  background: linear-gradient(to left, #5C449A,  #1879BD);
+}
