@@ -1,4 +1,4 @@
-// Sample unit test for testing insurance plans rendered in the insurance catalog page
+// Sample unit test for testing insurance plans rendered properly in the insurance catalog page
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import { insurancePlansData } from '../mock-data/main'
