@@ -14,12 +14,16 @@ import {
   useColorModeValue,
   useDisclosure,
   Container,
+  InputGroup,
+  InputRightElement,
+  Input
 } from '@chakra-ui/react'
 import {
   HamburgerIcon,
   CloseIcon,
   ChevronDownIcon,
   ChevronRightIcon,
+  SearchIcon
 } from '@chakra-ui/icons'
 import NextLink from 'next/link'
 interface NavItem {
@@ -94,6 +98,20 @@ export default function Navbar() {
             justify={'flex-end'}
             direction={'row'}
             spacing={6}>
+            <InputGroup w={60}>
+              <Input
+                id="search"
+                type="search"
+                placeholder={'Search'}
+                borderRadius={'full'}
+                fontSize={14}
+              />
+              <InputRightElement as="button" type="submit" cursor="pointer">
+                <NextLink href={'/products/search'}>
+                  <SearchIcon color="black" />
+                </NextLink>
+              </InputRightElement>
+            </InputGroup>
             <Button
               fontSize={'sm'}
               fontWeight={400}
