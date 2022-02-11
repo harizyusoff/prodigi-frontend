@@ -23,12 +23,12 @@ export default function HealthInsurance() {
       <Head>
         <title>Health Insurance</title>
       </Head>
-      <Flex 
+      <Flex
+        className={'page-banner'}
         h={'400px'}
         direction={'column'}
         align={'center'}
-        justify={'center'}
-        bgGradient='linear(to-r, #5C449A, #1879BD)'>
+        justify={'center'}>
         <Heading as={'h1'} color={'white'} fontSize={40} fontWeight={'bold'} mb={3}>
           Health Insurance
         </Heading>
